@@ -10,3 +10,11 @@ Math.and = (...args) => (args.every(a => a) ? 1 : 0);
 Math.or = (...args) => (args.some(a => a) ? 1 : 0);
 Math.pick = (cond, then, otherwise) => (cond ? (then === undefined ? 1 : then) : (otherwise === undefined ? 0 : otherwise));
 Math.unless = (cond, then, otherwise) => (!cond ? (then === undefined ? 1 : then) : (otherwise === undefined ? 0 : otherwise));
+Math.ranges = function() {
+  output = []
+  roll = arguments[0]
+  for (let i = 1; i < arguments.length; i += 3) {
+    if (roll >= arguments[i] && roll <= arguments[i+1])
+      {return(arguments[i+2])} else {};
+  }
+}
